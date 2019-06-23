@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+
+     <!--Bootstrap-->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class=" navbar-nav nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Produtos </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Contato </a>
+                        </li>
+                        <a class="navbar-brand nav-link" href="#"><img src="./img/turtle.png" alt=""></a>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-default navbar-btn" data-toggle="modal"
+                                data-target="#login-modal"> Login </button>
+                        </li>
+                        <li class="nav-item"> <a href="" class="nav-link" href="#"> Cadastre-se </a></li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link" href="#"> Carrinho </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Cadastro</h1>
+                <form>
+                    <input type="text" class="form-control" placeholder="Nome" required>
+
+                    <input type="text" class="form-control" placeholder="Sobrenome" required>
+
+                    <input type="text" class="form-control" placeholder="CPF" required>
+
+                    <input type="email" class="form-control" placeholder="E-mail" required>
+
+                    <input type="password" class="form-control" placeholder="Senha" required>
+
+                    <input type="password" class="form-control" placeholder="Confirmar senha" required>    
+
+                    <button class="btn btn-primary form-control">Cadastrar</button>
+                </form>
+            </div>
+
+            <div class="col-md-5" style="background:url(img/flor.jpg);"></div> 
+        </div>
+    </div>
+
+    <footer>
+        footer
+    </footer>
+</body>
+</html>
