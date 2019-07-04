@@ -2,65 +2,63 @@ create database ecommerce;
 
 use ecommerce;
 
-create table dados_pessoais(
-id integer auto_increment not null,
-nome varchar(50) not null,
-sobrenome varchar (100) not null,
-cpf varchar(11) not null,
-telefone varchar(11) not null,
-email varchar(100) not null,
-primary key (id)
+CREATE TABLE dados_pessoais (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    sobrenome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(11) NOT NULL,
+    telefone VARCHAR(11) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-create table endereco(
-id integer auto_increment not null,
-logradouro varchar (255) not null,
-numero integer not null,
-cep varchar(8) not null,
-bairro varchar(255) not null,
-cidade varchar(255) not null,
-estado varchar(50) not null,
-complemento varchar(255),
-referencia text,
-primary key (id)
+CREATE TABLE endereco (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    logradouro VARCHAR(255) NOT NULL,
+    numero INTEGER NOT NULL,
+    cep VARCHAR(8) NOT NULL,
+    bairro VARCHAR(255) NOT NULL,
+    cidade VARCHAR(255) NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    complemento VARCHAR(255),
+    referencia TEXT,
+    PRIMARY KEY (id)
 );
 
-create table produto (
-id integer auto_increment not null,
-nome varchar(255) not null,
-descricao text not null,
-preco decimal(7,2) not null,
-primary key (id)
+CREATE TABLE produto (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT NOT NULL,
+    preco DECIMAL(7 , 2 ) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-create table pedido(
-id integer auto_increment not null,
-preco_total decimal(7,2) not null,
-frete decimal (7,2) not null,
-numero_pedido integer not null,
-id_produto integer not null,
-primary key (id)
+CREATE TABLE pedido (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    preco_total DECIMAL(7 , 2 ) NOT NULL,
+    frete DECIMAL(7 , 2 ) NOT NULL,
+    numero_pedido INTEGER NOT NULL,
+    id_produto INTEGER NOT NULL,
+    PRIMARY KEY (id)
 );
 alter table pedido add constraint fk_produto_pedido foreign key (id_produto) references produto(id);
 
-create table cliente(
-id integer auto_increment not null,
-id_dados_pessoais integer not null,
-id_endereco integer not null,
-id_pedido integer not null,
-primary key (id)
+CREATE TABLE cliente (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    id_dados_pessoais INTEGER NOT NULL,
+    id_endereco INTEGER NOT NULL,
+    id_pedido INTEGER NOT NULL,
+    PRIMARY KEY (id)
 );
 alter table cliente add  constraint fk_dados_pessoais_cliente foreign key(id_dados_pessoais) references dados_pessoais(id);
 alter table cliente add  constraint fk_endereco_cliente foreign key(id_endereco) references endereco(id);
 alter table cliente add  constraint fk_pedidos_cliente foreign key(id_pedido) references pedido(id);
 
-create table usuario(
-id integer auto_increment not null,
-login varchar(30) not null,
-password varchar (30) not null,
-id_cliente integer not null,
-primary key (id)
+CREATE TABLE usuario (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    login VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    id_cliente INTEGER NOT NULL,
+    PRIMARY KEY (id)
 );
 alter table usuario add constraint fk_cliente_usuario  foreign key (id_cliente) references cliente(id);
-
-drop database ecommerce;
