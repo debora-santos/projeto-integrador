@@ -1,6 +1,6 @@
-create database ecommerce;
+CREATE DATABASE ecommerce;
 
-use ecommerce;
+USE ecommerce;
 
 CREATE TABLE dados_pessoais (
     id INTEGER AUTO_INCREMENT NOT NULL,
@@ -41,7 +41,8 @@ CREATE TABLE pedido (
     id_produto INTEGER NOT NULL,
     PRIMARY KEY (id)
 );
-alter table pedido add constraint fk_produto_pedido foreign key (id_produto) references produto(id);
+
+ALTER TABLE pedido ADD CONSTRAINT fk_produto_pedido FOREIGN KEY (id_produto) REFERENCES produto(id);
 
 CREATE TABLE cliente (
     id INTEGER AUTO_INCREMENT NOT NULL,
@@ -50,9 +51,12 @@ CREATE TABLE cliente (
     id_pedido INTEGER NOT NULL,
     PRIMARY KEY (id)
 );
-alter table cliente add  constraint fk_dados_pessoais_cliente foreign key(id_dados_pessoais) references dados_pessoais(id);
-alter table cliente add  constraint fk_endereco_cliente foreign key(id_endereco) references endereco(id);
-alter table cliente add  constraint fk_pedidos_cliente foreign key(id_pedido) references pedido(id);
+
+ALTER TABLE cliente ADD CONSTRAINT fk_dados_pessoais_cliente FOREIGN KEY(id_dados_pessoais) REFERENCES dados_pessoais(id);
+
+ALTER TABLE cliente ADD CONSTRAINT fk_endereco_cliente FOREIGN KEY(id_endereco) REFERENCES endereco(id);
+
+ALTER TABLE cliente ADD CONSTRAINT fk_pedidos_cliente FOREIGN KEY(id_pedido) REFERENCES pedido(id);
 
 CREATE TABLE usuario (
     id INTEGER AUTO_INCREMENT NOT NULL,
@@ -61,4 +65,5 @@ CREATE TABLE usuario (
     id_cliente INTEGER NOT NULL,
     PRIMARY KEY (id)
 );
-alter table usuario add constraint fk_cliente_usuario  foreign key (id_cliente) references cliente(id);
+
+ALTER TABLE usuario ADD CONSTRAINT fk_cliente_usuario FOREIGN KEY(id_cliente) REFERENCES cliente(id);
