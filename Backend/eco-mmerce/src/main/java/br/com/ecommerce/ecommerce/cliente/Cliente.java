@@ -16,16 +16,19 @@ public class Cliente {
     //@OneToOne
     //@JoinColumn(name = "id_dados_pessoais", referencedColumnName = "id")
     @NotNull
+    @Column(name = "id_dados_pessoais")
     private Long idDadosPessoais;
 
     //@OneToOne
     //@JoinColumn(name = "id_endereco", referencedColumnName = "id")
     @NotNull
+    @Column(name = "id_endereco")
     private Long idEndereco;
 
     //@OneToOne
     //@JoinColumn(name = "id_pedido", referencedColumnName = "id")
     @NotNull
+    @Column(name = "id_pedido")
     private Long idPedido;
 
 }
