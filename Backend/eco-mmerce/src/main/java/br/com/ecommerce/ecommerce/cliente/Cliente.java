@@ -11,7 +11,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     //@OneToOne
     //@JoinColumn(name = "id_dados_pessoais", referencedColumnName = "id")
