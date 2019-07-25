@@ -1,0 +1,24 @@
+<div [hidden]="submitted" class="container mt-3">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+      <h1 class="text-center">Cadastro</h1>
+      <form (ngSubmit)="onSubmit()">
+        <input type="text" class="form-control mt-3" placeholder="Nome" required aria-label="nome">
+        <input type="text" class="form-control mt-3" placeholder="Sobrenome" required aria-label="sobrenome">
+        <input type="text" class="form-control mt-3" placeholder="CPF" required aria-label="cpf">
+        <input type="text" class="form-control mt-3" placeholder="Telefone" required aria-label="telefone">
+        <input type="email" class="form-control mt-3" placeholder="E-mail" required aria-label="e-mail">
+        <input type="text" class="form-control mt-3" placeholder="Login" required aria-label="login" aria-required="true" [(ngModel)]="usuario.login" name="login">
+        <input type="password" class="form-control mt-3" placeholder="Senha" required aria-label="senha" aria-required="true" [(ngModel)]="usuario.password" name="password">
+        <input type="password" class="form-control mt-3" placeholder="Confirmar senha" required aria-label="confirmar senha">
+        <button type = "submit" class="btn btn-success form-control mt-3 ">Cadastrar</button>
+      </form>
+    </div>
+
+    <div></div>
+    <div class="d-flex justify-content-center col-xs-12 col-sm-12 col-md-5 col-lg-5" style="margin-top:20px;">
+      <!--<img src="assets/img/flor.jpg" class="img-fluid" alt="Imagem responsiva">-->
+    </div>
+  </div>
+</div>
+
