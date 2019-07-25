@@ -2,15 +2,13 @@ package br.com.ecommerce.ecommerce.pedido;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import org.generation.brazil.artemis.ArtemisApplication;
-import org.junit.After;
-import org.junit.Before;
+
+import br.com.ecommerce.ecommerce.EcoMmerceApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
@@ -24,7 +22,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ArtemisApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = EcoMmerceApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 public class PedidoControllerIntegrationTest {
 
     @Autowired
@@ -32,26 +30,11 @@ public class PedidoControllerIntegrationTest {
 
     @LocalServerPort
     private int port;
+    private Object String;
 
-    /**
-     * Monta a URL para a chamada de teste da API
-     * @return String
-     */
     private String getRootUrl() {
         return "http://localhost:" + port + "/api/v1/pedidos/";
     }
-
-  /*
-  @Before
-  public void before() {
-    // tudo que eu precisar fazer antes de comecar os testes
-  }
-
-  @After
-  public void after() {
-    // tudo que eu quiser que seja executado apos os testes
-  }
-  */
 
     @Test
     public void testaCriacaoDeUmNovoPedido() {
@@ -91,18 +74,18 @@ public class PedidoControllerIntegrationTest {
         Pedido pedido = testRestTemplate.getForObject(
                 getRootUrl() + id,
                 Pedido.class);
-        String = PedidoMock.getPedidoMock().getNumeroPedido();
+        String novoNumeroPedido = PedidoMock.getPedidoMock().getNumeroPedido();
         BigDecimal novoPreco = PedidoMock.getPedidoMock().getPreco();
         BigDecimal novoFrete = PedidoMock.getPedidoMock().getFrete();
         pedido.setNumeroPedido(novoNumeroPedido);
         pedido.setPreco(novoPreco);
-        pedido.setPreco(novoPreco);
+        pedido.setFrete(novoFrete);
         testRestTemplate.put(getRootUrl() + id, pedido);
         Pedido pedidoAtualizado = testRestTemplate.getForObject(
                 getRootUrl() + id,
                 Pedido.class);
         assertNotNull(pedidoAtualizado);
-        assertEquals(testaCriacaoDeUmNovoPedido();, pedidoAtualizado.getNumeroPedido());
+        assertEquals (novoNumeroPedido, pedidoAtualizado.getNumeroPedido());
         assertEquals(novoPreco, pedidoAtualizado.getPreco());
         assertEquals(novoFrete, pedidoAtualizado.getFrete());
     }
