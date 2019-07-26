@@ -7,21 +7,17 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  private baseUrl = 'localhost:8080/api/v1/usuarios';
+  private baseUrl = 'http://localhost:8080/api/v1/usuarios';
 
   constructor(private http: HttpClient) { }
-
-  getUsuarios(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }
 
   getUsuario(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   // tslint:disable-next-line:ban-types
-  createUsuario(usuario: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, usuario);
+  createUsuario(employee: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, employee);
   }
 
   // tslint:disable-next-line:ban-types
@@ -29,9 +25,11 @@ export class UsuarioService {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  deletePessoa(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`,
-      { responseType: 'text'});
+  deleteUsuario(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
+  getListaUsuario(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
+  }
 }

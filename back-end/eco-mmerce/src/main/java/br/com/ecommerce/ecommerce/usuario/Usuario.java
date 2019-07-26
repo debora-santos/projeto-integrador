@@ -19,6 +19,6 @@ public class Usuario {
   private String login;
 
   @NotNull
-  private String password;
+  private String senha;
 
 }

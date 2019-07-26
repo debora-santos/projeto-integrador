@@ -23,7 +23,7 @@ public class UsuarioController {
   @ApiResponses(value = {
           @ApiResponse(code = 201, message = "Usuário inserido com sucesso!"),
           @ApiResponse(code = 401, message = "Sem autorização"),
-          @ApiResponse(code = 403, message = "Proíbido"),
+          @ApiResponse(code = 403, message = "Proibido"),
           @ApiResponse(code = 404, message = "Não encontrado")
   })
   @ResponseStatus(HttpStatus.CREATED)
@@ -38,7 +38,7 @@ public class UsuarioController {
   @ApiResponses(value = {
           @ApiResponse(code = 200, message = "Usuários listados com Sucesso!"),
           @ApiResponse(code = 401, message = "Sem autorização"),
-          @ApiResponse(code = 403, message = "Proíbido"),
+          @ApiResponse(code = 403, message = "Proibido"),
           @ApiResponse(code = 404, message = "Não encontrado")
   })
 
@@ -53,7 +53,7 @@ public class UsuarioController {
   @ApiResponses(value = {
           @ApiResponse(code = 200, message = "Usuário listado com Sucesso!"),
           @ApiResponse(code = 401, message = "Sem autorização"),
-          @ApiResponse(code = 403, message = "Proíbido"),
+          @ApiResponse(code = 403, message = "Proibido"),
           @ApiResponse(code = 404, message = "Não encontrado")
   })
   @GetMapping("/usuarios/{id}")
@@ -69,14 +69,14 @@ public class UsuarioController {
   @ApiResponses(value = {
           @ApiResponse(code = 200, message = "Usuário atualizado com sucesso!"),
           @ApiResponse(code = 401, message = "Sem autorização"),
-          @ApiResponse(code = 403, message = "Proíbido"),
+          @ApiResponse(code = 403, message = "Proibido"),
           @ApiResponse(code = 404, message = "Não encontrado")
   })
   @PutMapping("/usuarios/{id}")
   public Usuario update(@PathVariable Long id, @RequestBody Usuario usuario) throws ResourceNotFoundException {
     return usuarioRepository.findById(id).map(usuarioAtualizado -> {
       usuarioAtualizado.setLogin(usuario.getLogin());
-      usuarioAtualizado.setPassword(usuario.getPassword());
+      usuarioAtualizado.setSenha(usuario.getSenha());
       return usuarioRepository.save(usuarioAtualizado);
     }).orElseThrow(() ->
         new ResourceNotFoundException("Não há usuário registrado com o id " + id));
@@ -89,7 +89,7 @@ public class UsuarioController {
   @ApiResponses(value = {
           @ApiResponse(code = 200, message = "Usuário deletado com sucesso!"),
           @ApiResponse(code = 401, message = "Sem autorização"),
-          @ApiResponse(code = 403, message = "Proíbido"),
+          @ApiResponse(code = 403, message = "Proibido"),
           @ApiResponse(code = 404, message = "Não encontrado")
   })
   @DeleteMapping("/usuarios/")

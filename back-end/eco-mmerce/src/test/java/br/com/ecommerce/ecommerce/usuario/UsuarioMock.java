@@ -7,7 +7,7 @@ import com.github.javafaker.Faker;
             Faker faker = new Faker();
             Usuario usuario = new Usuario();
             usuario.setLogin(faker.name().username());
-            usuario.setPassword(faker.internet().password());
+            usuario.setSenha(faker.internet().password());
             return usuario;
         }
     }

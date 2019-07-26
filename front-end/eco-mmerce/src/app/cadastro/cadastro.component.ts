@@ -1,7 +1,7 @@
+import { UsuarioService } from '../usuario.service';
+import { Usuario } from '../usuario';
 import { Component, OnInit } from '@angular/core';
-import {Usuario} from '../usuario';
-import {UsuarioService} from '../usuario.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -26,10 +26,7 @@ export class CadastroComponent implements OnInit {
 
   save() {
     this.usuarioService.createUsuario(this.usuario)
-      .subscribe(
-        data => console.log(data),
-        error => console.log(error)
-      );
+      .subscribe(data => console.log(data), error => console.log(error));
     this.usuario = new Usuario();
   }
 
@@ -37,5 +34,4 @@ export class CadastroComponent implements OnInit {
     this.submitted = true;
     this.save();
   }
-
 }
