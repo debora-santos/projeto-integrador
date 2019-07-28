@@ -8,11 +8,21 @@ import {FormsModule} from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { ContatoComponent } from './contato/contato.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { ProdutosComponent } from './produtos/produtos.component';
+import { ProdutoDetalhadoComponent } from './produto-detalhado/produto-detalhado.component';
+import { SobreComponent } from './sobre/sobre.component';
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
-    HomeComponent
+    HomeComponent,
+    ContatoComponent,
+    CarrinhoComponent,
+    ProdutosComponent,
+    ProdutoDetalhadoComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,
