@@ -23,7 +23,7 @@ public class Endereco {
     private Long numero;
 
     @NotNull
-    private Long cep;
+    private String cep;
 
     @NotNull
     private String bairro;
@@ -32,9 +32,9 @@ public class Endereco {
     private String cidade;
 
     @NotNull
-    private Long estado;
+    private String estado;
 
-    private Long complemento;
+    private String complemento;
 
     private String referencia;
 

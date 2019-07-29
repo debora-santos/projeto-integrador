@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api/v1")
 public class EnderecoController {
 
     @Autowired
@@ -20,7 +21,7 @@ public class EnderecoController {
         return enderecoRepository.save(endereco);
     }
 
-    @GetMapping("/enderecos")
+    @GetMapping("/endereco")
     public List<Endereco> findAll() {
         return enderecoRepository.findAll();
     }
