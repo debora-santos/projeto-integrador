@@ -1,6 +1,6 @@
 package br.com.ecommerce.ecommerce.produto;
 
-/*
+
 import br.com.ecommerce.ecommerce.EcoMmerceApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;

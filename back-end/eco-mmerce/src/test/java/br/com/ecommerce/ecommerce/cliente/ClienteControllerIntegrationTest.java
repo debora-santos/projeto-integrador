@@ -1,5 +1,5 @@
 package br.com.ecommerce.ecommerce.cliente;
-/*
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class ClienteControllerIntegrationTest {
     private int port;
 
     private String getRootUrl(String path) {
-        return "http://localhost:" + port + "/api/v1.1/" + path;
+        return "http://localhost:" + port + "/api/v1/" + path;
     }
 
     @Test
@@ -50,7 +50,7 @@ public class ClienteControllerIntegrationTest {
     @Test
     public void findById() {
         int id = 1;
-        Cliente cliente = testRestTemplate.getForObject(getRootUrl("/cliente/" + id), Cliente.class);
+        Cliente cliente = testRestTemplate.getForObject(getRootUrl("/clientes/" + id), Cliente.class);
         assertNotNull(cliente);
 
     }
@@ -59,21 +59,21 @@ public class ClienteControllerIntegrationTest {
     public void update() {
         int id = 1;
         testRestTemplate.put(getRootUrl("/cliente/" + id), ClienteMock.getClienteMock());
-        Cliente clienteAtualizado = testRestTemplate.getForObject(getRootUrl("/cliente/" + id), Cliente.class);
+        Cliente clienteAtualizado = testRestTemplate.getForObject(getRootUrl("/clientes/" + id), Cliente.class);
         assertNotNull(clienteAtualizado);
     }
 
     @Test
     public void delete() {
-        int id = 2; // Turn this value dynamic, fetch first row only ? create-drop?
-        Cliente cliente = testRestTemplate.getForObject(getRootUrl("/cliente/delete/" + id), Cliente.class);
+        int id = 1;
+        Cliente cliente = testRestTemplate.getForObject(getRootUrl("/clientes/delete/" + id), Cliente.class);
         assertNotNull(cliente);
-        testRestTemplate.delete(getRootUrl("/cliente/delete/" + id));
+        testRestTemplate.delete(getRootUrl("/clientes/delete/" + id));
         try {
-            cliente = testRestTemplate.getForObject(getRootUrl("/cliente/delete/" + id), Cliente.class);
+            cliente = testRestTemplate.getForObject(getRootUrl("/clientes/delete/" + id), Cliente.class);
         } catch (final HttpClientErrorException e) {
             assertEquals(HttpStatus.NOT_FOUND, e.getStatusCode());
         }
     }
 }
-*/
+

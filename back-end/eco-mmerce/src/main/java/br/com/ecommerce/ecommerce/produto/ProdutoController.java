@@ -9,13 +9,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("api/v1")
 public class ProdutoController {
 
     @Autowired
     private ProdutoRepository produtoRepository;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/produto")
+    @PostMapping("/produtos")
     public Produto save(@RequestBody Produto produto) {
         return produtoRepository.save(produto);
     }
@@ -25,14 +26,14 @@ public class ProdutoController {
         return produtoRepository.findAll();
     }
 
-    @GetMapping("/produto/{id}")
+    @GetMapping("/produtos/{id}")
     public Optional<Produto> findById(@PathVariable Long id) throws ResourceNotFoundException {
         if (produtoRepository.findById(id).isPresent()) {
             return produtoRepository.findById(id);
         } else throw new ResourceNotFoundException("Não há produto com o id " + id);
     }
 
-    @PutMapping("/produto/{id}")
+    @PutMapping("/produtos/{id}")
     public Produto update(@PathVariable Long id, @RequestBody Produto produto) throws ResourceNotFoundException {
         return produtoRepository.findById(id).map(produtoAtualizado -> {
             produtoAtualizado.setNome(produto.getNome());
@@ -44,7 +45,7 @@ public class ProdutoController {
 
     }
 
-    @DeleteMapping("/produto/delete")
+    @DeleteMapping("/produtos/delete")
     public void delete(@RequestParam Long id){
         produtoRepository.deleteById(id);
     }

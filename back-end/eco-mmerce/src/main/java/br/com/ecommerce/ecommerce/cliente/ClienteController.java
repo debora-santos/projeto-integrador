@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://example.com")
+@RequestMapping("api/v1")
 public class ClienteController {
 
     @Autowired
     ClienteRepository clienteRepository;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/cliente")
+    @PostMapping("/clientes")
     public Cliente save(@RequestBody Cliente cliente) {
         return clienteRepository.save(cliente);
     }
@@ -26,14 +26,14 @@ public class ClienteController {
         return clienteRepository.findAll();
     }
 
-    @GetMapping("/cliente/{id}")
+    @GetMapping("/clientes/{id}")
     public Optional<Cliente> findById(@PathVariable Long id) throws ResourceNotFoundException {
         if (clienteRepository.findById(id).isPresent()) {
             return clienteRepository.findById(id);
         } else throw new ResourceNotFoundException("Não há cliente com o id " + id);
     }
 
-    @PutMapping("/cliente/{id}")
+    @PutMapping("/clientes/{id}")
     public Cliente update(@PathVariable Long id, @RequestBody Cliente cliente) throws ResourceNotFoundException{
         return  clienteRepository.findById(id).map(clienteAtualizado -> {
             clienteAtualizado.setIdDadosPessoais(cliente.getIdDadosPessoais());
@@ -44,8 +44,8 @@ public class ClienteController {
                 new ResourceNotFoundException("Não há cliente com o id " +id));
     }
 
-    @DeleteMapping("/cliente/delete")
-    public void delete(@RequestParam Long id){
+    @DeleteMapping("/clientes/delete/{id}")
+    public void delete(@PathVariable Long id){
         clienteRepository.deleteById(id);
     }
 }

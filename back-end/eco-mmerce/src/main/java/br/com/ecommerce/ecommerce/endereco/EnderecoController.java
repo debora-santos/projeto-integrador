@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("api/v1")
 public class EnderecoController {
 
     @Autowired
@@ -48,8 +49,8 @@ public class EnderecoController {
                 new ResourceNotFoundException("Não há endereço com o id " +id));
     }
 
-    @DeleteMapping("/enderecos/")
-    public void delete(@RequestParam Long id){
+    @DeleteMapping("/enderecos/delete/{id}")
+    public void delete(@PathVariable Long id){
         enderecoRepository.deleteById(id);
     }
 }
