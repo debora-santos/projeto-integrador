@@ -1,5 +1,0 @@
-<root>
-    <item name='com.github.javafaker.Faker com.github.javafaker.IdNumber idNumber()'>
-        <annotation name='org.jetbrains.annotations.NotNull'/>
-    </item>
-</root>
