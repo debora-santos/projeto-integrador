@@ -50,7 +50,7 @@ public class UsuarioController {
 
   @ApiOperation(value = "Lista um usuário específico",
           notes = "Lista usuário específico",
-          response = List.class)
+          response = Optional.class)
   @ApiResponses(value = {
           @ApiResponse(code = 200, message = "Usuário listado com Sucesso!"),
           @ApiResponse(code = 401, message = "Sem autorização"),
@@ -66,7 +66,7 @@ public class UsuarioController {
 
   @ApiOperation(value = "Atualiza os dados do usuário",
           notes = "Atualiza os dados do usuário",
-          response = List.class)
+          response = Usuario.class)
   @ApiResponses(value = {
           @ApiResponse(code = 200, message = "Usuário atualizado com sucesso!"),
           @ApiResponse(code = 401, message = "Sem autorização"),
