@@ -1,4 +1,4 @@
-package br.com.ecommerce.ecommerce;
+package br.com.ecommerce.ecommerce.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
