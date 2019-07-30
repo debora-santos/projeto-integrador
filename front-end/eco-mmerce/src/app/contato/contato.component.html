@@ -15,25 +15,25 @@
     <form>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <input type="name" class="form-control" id="nome" placeholder="Nome">
+          <input type="name" class="form-control" id="nome" placeholder="Nome" required aria-label="nome">
         </div>
         <div class="form-group col-md-6">
-          <input type="sobrenome" class="form-control" id="sobrenome" placeholder="Sobrenome">
+          <input type="sobrenome" class="form-control" id="sobrenome" placeholder="Sobrenome" required aria-label="sobrenome">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-3">
-          <input type="text" class="form-control" id="ddd" placeholder="DDD">
+          <input type="text" class="form-control" id="ddd" placeholder="DDD" required aria-label="ddd">
         </div>
         <div class="form-group col-md-9">
-          <input type="text" class="form-control" id="celular" placeholder="Celular">
+          <input type="text" class="form-control" id="celular" placeholder="Celular" required aria-label="celular">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-12 ">
-            <textarea class="form-control" id="comentarios" rows="12" placeholder="Comentários"></textarea>
+            <textarea class="form-control" id="comentarios" rows="12" placeholder="Comentários" aria-label="comentarios"></textarea>
         </div>
         <div class="form-group">
           <div class="form-check">
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-primary" aria-label="enviar">Enviar</button>
     </form>
   </div>
 </section>
