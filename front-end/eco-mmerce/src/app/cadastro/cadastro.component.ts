@@ -1,7 +1,8 @@
 import { UsuarioService } from '../usuario.service';
-import { Usuario } from '../usuario';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {SignUpInfo} from '../auth/signup-info';
+import {AuthService} from '../auth/auth.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,28 +11,37 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
-  usuario: Usuario = new Usuario();
-  submitted = false;
+  form: any = {};
+  signupInfo: SignUpInfo;
+  isSignedUp = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  constructor(private usuarioService: UsuarioService,
-              private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
-
-  newUsuario(): void {
-    this.submitted = false;
-    this.usuario = new Usuario();
-  }
-
-  save() {
-    this.usuarioService.createUsuario(this.usuario)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.usuario = new Usuario();
-  }
+  ngOnInit() { }
 
   onSubmit() {
-    this.submitted = true;
-    this.save();
+    console.log(this.form);
+
+    this.signupInfo = new SignUpInfo(
+      this.form.name,
+      this.form.username,
+      this.form.email,
+      this.form.password);
+
+    this.authService.signUp(this.signupInfo).subscribe(
+      data => {
+        console.log(data);
+        this.isSignedUp = true;
+        this.isSignUpFailed = false;
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
+
 }

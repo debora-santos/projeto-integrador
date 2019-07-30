@@ -1,3 +1,4 @@
+<div  *ngIf="token.getRoleType() === 'user'">
 <div id="mainCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-interval="10000">
@@ -121,4 +122,11 @@
     </div>
   </div>
 </section>
+</div>
+<div *ngIf="!token.getRoleType()" class="nav-item">
+  <p style="font-size: 3rem;">
+    Para acessar o conteúdo, é necessário efetuar o login no sistema... <a class="nav-link" href="../login">Login</a>
+  </p>
+</div>
+
 

@@ -21,7 +21,7 @@ public class SwaggerConfig {
     }
 }
 
-    // TODO - Informaçaõ quanto ao grupo
+    // TODO - Informação quanto ao grupo
     /*
     private ApiInfo info() {
         return new ApiInfoBuilder().title("Eco-mmerce")
