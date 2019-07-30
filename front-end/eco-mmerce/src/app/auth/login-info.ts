@@ -7,5 +7,4 @@ export class AuthLoginInfo {
     this.usernameOrEmail = usernameOrEmail;
     this.password = password;
   }
-
 }

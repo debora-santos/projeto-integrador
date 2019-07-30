@@ -20,12 +20,9 @@
         <input type="password" class="form-control mt-3" id="password" name="password"  placeholder="Senha" aria-label="senha" [(ngModel)]="form.password" #password="ngModel" required minlength="8">
         <div *ngIf="f.submitted && password.invalid">
           <div class="error" *ngIf="password.errors.required">Por favor, preencha o campo senha</div>
-          <div class="error" *ngIf="password.errors.minlength">O campo senha deve ter mais que 8
-            caracteres
-          </div>
+          <div class="error" *ngIf="password.errors.minlength">O campo senha deve ter mais que 8 caracteres</div>
         </div>
-        <input type="password" class="form-control mt-3" name="confirmarSenha"  placeholder="Confirmar senha" required aria-label="confirmar senha">
-        <button type="submit" class="btn btn-success form-control mt-3 ">Cadastrar</button>
+        <button type="submit" class="btn btn-success form-control mt-3" data-toggle="modal">Cadastrar</button>
       </form>
     </div>
   </div>

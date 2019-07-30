@@ -1,0 +1,68 @@
+<section>
+  <div class="container">
+    <h3 class="d-flex justify-content-center">Gerenciar Produtos</h3>
+    <div class="row">
+      <div class="d-flex justify-content-center col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="card" style="width: 18rem; margin-top: 20px;">
+          <div class="form-group">
+            <label for="addImagemProduto">Adicionar imagem do produto</label>
+            <input type="file" class="form-control-file" id="addImagemProduto">
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="nomeDoProduto">Nome do Produto</label>
+              <input type="text" class="form-control" id="nomeDoProduto">
+            </div>
+            <div class="form-group">
+              <label for="descricaoProduto">Adicionar descrição do Produto</label>
+              <textarea class="form-control" id="descricaoProduto" rows="3"></textarea>
+            </div>
+            <label for="valor"></label>
+            <input type="text" class="form-control" id="valor" placeholder="R$ 0,00">
+
+            <div class="form-group">
+              <label for="quantidade"> Quantidade </label>
+              <input type="number" class="form-control" id="quantidade" placeholder="0">
+            </div>
+            <button type="button" class="btn btn-success">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center col-xs-12 col-sm-6 col-md-6 col-lg-8">
+        <div class="col-md-6 user-container">
+          <h2 style="margin: auto">Lista de Produtos</h2>
+          <button class="btn btn-success" style="width:100px" (click)="adicionarProduto()">Adicionar Produto</button>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th class="hidden">Id</th>
+              <th>Nome</th>
+              <th>imagem</th>
+              <th>descricao</th>
+              <th>preco</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let produto of produtos | async">
+              <td class="hidden">{{ produto.id }}</td>
+              <td>{{ produto.nome }}</td>
+              <td>{{ produto.imagem }}</td>
+              <td>{{ produto.descricao }}</td>
+              <td>{{ produto.preco }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteProduto(produto.id)">Remover</button>
+                <button class="btn btn-info" (click)="editProduto(produto.id)" style="margin-left: 20px;">Editar
+                </button>
+                <button class="btn btn-info" (click)="visualizarProduto(produto.id)" style="margin-left: 20px;">
+                  Visualizar
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
