@@ -12,12 +12,10 @@ import {Router} from '@angular/router';
 })
 export class InterfaceProdutosComponent implements OnInit {
 
-
   produtos: Observable<Produto[]>;
+  produto: Produto = new Produto();
 
-  constructor(private token: TokenStorageService,
-              private produtoService: ProdutoService,
-              private router: Router) { }
+  constructor(private token: TokenStorageService, private produtoService: ProdutoService, private router: Router ) { }
 
   ngOnInit() {
     this.reloadData();
@@ -28,16 +26,11 @@ export class InterfaceProdutosComponent implements OnInit {
     console.log(this.produtos);
   }
 
-  adicionarProduto() {
-    this.router.navigate(['adicionar-pessoa']);
-  }
-
   editProduto(id: number) {
-    this.router.navigate(['editar-pessoa', id]);
   }
 
   visualizarProduto(id: number) {
-    this.router.navigate(['visualizar-pessoa', id]);
+    this.router.navigate(['produto-detalhado', id]);
   }
 
   deleteProduto(id: number) {
@@ -50,7 +43,9 @@ export class InterfaceProdutosComponent implements OnInit {
         error => console.log(error));
   }
 
-  goToLogin() {
-    this.router.navigate(['login']);
+  onSubmit() {
+    this.produtoService.createProduto(this.produto)
+      .subscribe(data => console.log(data), error => console.log(error));
+    this.produto = new Produto();
   }
 }

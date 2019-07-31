@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'sobre', component: SobreComponent },
   { path: 'contato', component: ContatoComponent },
   { path: 'carrinho', component: CarrinhoComponent },
-  { path: 'produto-detalhado', component: ProdutoDetalhadoComponent },
+  { path: 'produto-detalhado/:id', component: ProdutoDetalhadoComponent },
   { path: 'interface-produtos', component: InterfaceProdutosComponent },
 
 ];
