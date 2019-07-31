@@ -7,6 +7,7 @@ import {SobreComponent} from './sobre/sobre.component';
 import {ContatoComponent} from './contato/contato.component';
 import {CarrinhoComponent} from './carrinho/carrinho.component';
 import {ProdutoDetalhadoComponent} from './produto-detalhado/produto-detalhado.component';
+import {ClienteComponent} from "./cliente/cliente.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,8 +18,7 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent },
   { path: 'carrinho', component: CarrinhoComponent },
   { path: 'produto-detalhado', component: ProdutoDetalhadoComponent },
-
-
+  { path: 'cliente', component: ClienteComponent },
 
 ];
 
