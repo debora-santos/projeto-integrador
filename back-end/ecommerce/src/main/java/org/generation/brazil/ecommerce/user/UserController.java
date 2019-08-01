@@ -37,9 +37,9 @@ public class UserController {
   }
 
   @PostMapping("/users")
-  public UserProfile getUserProfile(@RequestParam String username) throws ResourceNotFoundException {
+  public UserProfile getUserProfile(@RequestParam String username) {
     User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new ResourceNotFoundException("User not found."));
+        .orElseThrow(() -> new ResourceNotFoundException("Usuario não encontrado."));
 
     return new UserProfile(user.getId(), user.getUsername(), user.getName());
   }

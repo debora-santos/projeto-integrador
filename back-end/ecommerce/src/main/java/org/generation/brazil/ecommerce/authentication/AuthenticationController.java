@@ -67,7 +67,7 @@ public class AuthenticationController {
     if (userRepository.existsByUsername(signUpRequest.getUsername()) || userRepository
         .existsByEmail(signUpRequest.getEmail())) {
       return ResponseEntity.badRequest()
-          .body(new AuthenticationResponse(false, "Username or E-mail Address already in use."));
+          .body(new AuthenticationResponse(false, "Nome de usuário ou e-mail já existente."));
     }
 
     Role userRole = roleRepository.findByName(RoleName.ROLE_USER)
