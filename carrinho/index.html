@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="uft-8">
+    <meta charset="pt-br">
+    <title>Carrinho</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+    <div class="container">
+
+        <div class="card">
+            <table class="table table-hover shopping-cart-wrap">
+                <thead class="text-muted">
+                    <tr>
+                        <th scope="col">Produto</th>
+                        <th scope="col" width="120">Quantidade</th>
+                        <th scope="col" width="120">Preço</th>
+                        <th scope="col" width="200" class="text-right">Ação</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <figure class="media">
+                                <div class="img-wrap"><img src="http://bootstrap-ecommerce.com/main/images/items/2.jpg"
+                                        class="img-thumbnail img-sm"></div>
+                                <figcaption class="media-body">
+                                    <h6 class="title text-truncate">Produto </h6>
+                                    <dl class="param param-inline small">
+                                        <dt>Descrição </dt>
+                                        <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam quos vel
+                                            voluptatibus sequi nihil? Impedit quae saepe odio labore aliquam reiciendis
+                                            modi quia. Possimus, nesciunt reiciendis autem quisquam laborum quas! </dd>
+                                    </dl>
+                                </figcaption>
+                            </figure>
+                        </td>
+                        <td>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="price-wrap">
+                                <p class="price">R$ 2,00</p>
+                                <small class="text-muted">(R$ 2,00 cada)</small>
+                            </div>
+                        </td>
+                        <td class="text-right">
+                            <a title="" href="" class="btn btn-outline-success" data-toggle="tooltip"
+                                data-original-title="Save to Wishlist"> <i class="fa fa-heart"></i></a>
+                            <a href="" class="btn btn-outline-danger"> × Remover</a>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+
+                            <figure class="media-body">
+
+                                <h6 class="title text-truncate">Informar CEP </h6>
+                                <form class="form-inline" action="/action_page.php">
+                                    <label for="CEP" class="mr-sm-2"> </label>
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="CEP"
+                                        placeholder="00000-000">
+                                    <button type="submit" class="btn btn-outline-success mb-2">Calcular frete</button>
+                                </form>
+                                <div class="cart-delivery-check"></div>
+                                <td class="text-right">
+                                        <label for="CEP" class="mr-sm-8"><h6>Preço total</h6> </label>
+                                        <input type="text" class="form-control mb-2 mr-sm-2" id="Preço"
+                                            >
+                                    </td>
+                            </figure>
+
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    </article>
+
+</body>
+
+</html>
