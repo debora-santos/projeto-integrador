@@ -7,11 +7,8 @@ import {SobreComponent} from './sobre/sobre.component';
 import {ContatoComponent} from './contato/contato.component';
 import {CarrinhoComponent} from './carrinho/carrinho.component';
 import {ProdutoDetalhadoComponent} from './produto-detalhado/produto-detalhado.component';
-<<<<<<< HEAD
-import {ClienteComponent} from "./cliente/cliente.component";
-=======
+import {ClienteComponent} from './cliente/cliente.component';
 import {InterfaceProdutosComponent} from './interface-produtos/interface-produtos.component';
->>>>>>> tentando_security
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,14 +18,10 @@ const routes: Routes = [
   { path: 'sobre', component: SobreComponent },
   { path: 'contato', component: ContatoComponent },
   { path: 'carrinho', component: CarrinhoComponent },
-<<<<<<< HEAD
   { path: 'produto-detalhado', component: ProdutoDetalhadoComponent },
   { path: 'cliente', component: ClienteComponent },
-=======
   { path: 'produto-detalhado/:id', component: ProdutoDetalhadoComponent },
   { path: 'interface-produtos', component: InterfaceProdutosComponent },
->>>>>>> tentando_security
-
 ];
 
 @NgModule({

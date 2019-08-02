@@ -16,11 +16,8 @@ import { SobreComponent } from './sobre/sobre.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import { HeaderComponent } from './compartilhados/header/header.component';
 import { FooterComponent } from './compartilhados/footer/footer.component';
-<<<<<<< HEAD
 import { ClienteComponent } from './cliente/cliente.component';
-=======
 import { InterfaceProdutosComponent } from './interface-produtos/interface-produtos.component';
->>>>>>> tentando_security
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,11 +30,8 @@ import { InterfaceProdutosComponent } from './interface-produtos/interface-produ
     SobreComponent,
     HeaderComponent,
     FooterComponent,
-<<<<<<< HEAD
+    InterfaceProdutosComponent,
     ClienteComponent
-=======
-    InterfaceProdutosComponent
->>>>>>> tentando_security
   ],
   imports: [
     BrowserModule,
