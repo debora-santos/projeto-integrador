@@ -1,7 +1,6 @@
 package org.generation.brazil.ecommerce.usuario;
 
 import org.generation.brazil.ecommerce.EcommerceApplication;
-import org.generation.brazil.ecommerce.cliente.Cliente;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
