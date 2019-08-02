@@ -1,38 +1,47 @@
 <header>
-  <nav class="navbar navbar-expand-xl navbar-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top" style="padding:0px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style=" opacity: 0.9; box-shadow: black 0 0 5px; padding: 0px; background-color: #5ba9e4">
       <ul class=" navbar-nav nav-fill">
-        <li class="nav-item">
-          <a class="nav-link" href="./home"> Home</a>
+        <a class="navbar-brand nav-link" href="#">
+          <img src="../../assets/img/logo/tortuguita_50x50.png" alt="">
+        </a>
+        <li>
+          <a style="margin-left: -20px;" class="navbar-brand nav-link" href="#">
+            <img src="../../assets/img/ECO-MMERCE.png" alt="">
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./sobre"> Sobre nós</a>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" href="#"> Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./produtos"> Produtos </a>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" href="#"> Sobre nós</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./contato"> Contato </a>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" href="#"> Produtos </a>
         </li>
-        <li class="nav-item">
-          <a class="navbar-brand nav-link" href="../home"><img src="https://i.imgur.com/6p2hyLP.png" alt=""></a>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" href="#"> Contato </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="margin-top: 10px;">
           <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login-modal">
             Login </button>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" (click)="logout()">Sair</a>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" href="#"> Cadastre-se </a>
         </li>
-        <li class="nav-item"> <a class="nav-link" href="#" routerLink="/cadastro" routerLinkActive="active"> Cadastre-se </a>
+        <li>
+          <form style="margin-top: 10px; margin-left: 20px;" class="navbar-form navbar-right search-form" role="search">
+            <input type="text" class="form-control" placeholder="Pesquisa..." />
+          </form>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/carrinho" routerLinkActive="active"> Carrinho </a>
-        </li>
+        <a class="navbar-brand nav-link" href="#">
+          <img style="margin-top: 10px; width: 30px; margin-left: 30px;" src="../../assets/img/shopping-cart_icon-icons.com_69913.png"
+               alt="">
+        </a>
       </ul>
     </div>
   </nav>
@@ -42,7 +51,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title"> Login </h3>
+        <h3 class="nav-link" href="">Login</h3>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
