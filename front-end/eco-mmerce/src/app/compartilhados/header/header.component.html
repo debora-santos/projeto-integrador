@@ -1,14 +1,13 @@
 <header>
-  <nav class="navbar navbar-expand-xl navbar-light fixed-top" style="padding:0px;">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+  <nav class="navbar navbar-expand-xl navbar-light" style="padding:0;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style=" opacity: 0.9; box-shadow: black 0 0 5px; padding: 0px; background-color: #5ba9e4">
-      <ul class=" navbar-nav nav-fill">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="home" routerLinkActive="active"> Home</a>
-        </li>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav"
+         style="box-shadow: black 0 0 5px; padding: 0;">
+      <ul class=" navbar-nav nav-fill justify-content-around" style="margin-top: 10px;">
         <li class="nav-item">
           <a class="nav-link" routerLink="sobre" routerLinkActive="active"> Sobre nós</a>
         </li>
@@ -19,60 +18,27 @@
           <a class="nav-link" routerLink="contato" routerLinkActive="active"> Contato </a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand nav-link" routerLink="home" routerLinkActive="active"><img src="https://i.imgur.com/6p2hyLP.png" alt="tartaruga"></a>
+          <a class="navbar-brand nav-link" routerLink="home" routerLinkActive="active">
+            <img src="https://i.imgur.com/15cX1as.png" width="50px" height="50px" alt="tartaruga">
+          </a>
         </li>
         <li class="nav-item">
-          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login-modal" *ngIf="!tokenStorage.getRoleType()">Login </button>
+          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login-modal"
+                  *ngIf="!tokenStorage.getRoleType()">Login
+          </button>
         </li>
         <li class="nav-item" *ngIf="!tokenStorage.getRoleType()">
-          <a class="nav-link" href="#" routerLink="/cadastro" routerLinkActive="active"> Cadastre-se</a>
+          <a class="nav-link" href="#" routerLink="cadastro" routerLinkActive="active"> Cadastre-se</a>
         </li>
         <li class="nav-item" *ngIf="tokenStorage.getRoleType()">
-          <a class="nav-link" routerLink="/interface-produtos" routerLinkActive="active">Administrar</a>
+          <a class="nav-link" routerLink="interface-produtos" routerLinkActive="active">Administrar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/carrinho" routerLinkActive="active">Carrinho </a>
+          <a class="nav-link" routerLink="carrinho" routerLinkActive="active">Carrinho</a>
         </li>
         <li class="nav-item" *ngIf="tokenStorage.getRoleType()">
           <a class="nav-link" href="#" (click)="logout()">Sair</a>
-=======
-        <a class="navbar-brand nav-link" href="#">
-          <img src="../../assets/img/logo/tortuguita_50x50.png" alt="">
-        </a>
-        <li>
-          <a style="margin-left: -20px;" class="navbar-brand nav-link" href="#">
-            <img src="../../assets/img/ECO-MMERCE.png" alt="">
-          </a>
         </li>
-        <li class="nav-item" style="margin-top: 10px;">
-          <a class="nav-link" href="#"> Home</a>
-        </li>
-        <li class="nav-item" style="margin-top: 10px;">
-          <a class="nav-link" href="#"> Sobre nós</a>
-        </li>
-        <li class="nav-item" style="margin-top: 10px;">
-          <a class="nav-link" href="#"> Produtos </a>
-        </li>
-        <li class="nav-item" style="margin-top: 10px;">
-          <a class="nav-link" href="#"> Contato </a>
-        </li>
-        <li class="nav-item" style="margin-top: 10px;">
-          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login-modal">
-            Login </button>
-        </li>
-        <li class="nav-item" style="margin-top: 10px;">
-          <a class="nav-link" href="#"> Cadastre-se </a>
-        </li>
-        <li>
-          <form style="margin-top: 10px; margin-left: 20px;" class="navbar-form navbar-right search-form" role="search">
-            <input type="text" class="form-control" placeholder="Pesquisa..." />
-          </form>
->>>>>>> dc4b99ce9fc0e80a06aabadda379c70507cba2b8
-        </li>
-        <a class="navbar-brand nav-link" href="#">
-          <img style="margin-top: 10px; width: 30px; margin-left: 30px;" src="../../assets/img/shopping-cart_icon-icons.com_69913.png"
-               alt="">
-        </a>
       </ul>
     </div>
   </nav>
@@ -102,19 +68,22 @@
                    [(ngModel)]="form.password" #password="ngModel" required minlength="8"/>
             <div *ngIf="f.submitted && password.invalid">
               <div *ngIf="password.errors.required"><span class="error">Por favor, preencha o campo senha</span></div>
-              <div *ngIf="password.errors.minlength"><span class="error">O campo senha deve ter mais que 8 caracteres</span></div>
+              <div *ngIf="password.errors.minlength"><span
+                class="error">O campo senha deve ter mais que 8 caracteres</span></div>
             </div>
           </div>
           <div class="form-group m-0">
-            <button type="submit" class="btn btn-success w-100" ><strong>Login</strong></button>
+            <button type="submit" class="btn btn-success w-100"><strong>Login</strong></button>
             <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
               <span class="error">Falha no login: {{errorMessage}}</span>
             </div>
           </div>
         </form>
       </div>
-      <div class="modal-footer">Z
-        <button class="btn btn-success w-100" data-dismiss="modal" routerLink="/cadastro" routerLinkActive="active">Ainda não tem conta? Cadastre-se</button>
+      <div class="modal-footer">
+        <button class="btn btn-success w-100" data-dismiss="modal" routerLink="/cadastro" routerLinkActive="active">
+          Ainda não tem conta? Cadastre-se
+        </button>
       </div>
     </div>
   </div>
