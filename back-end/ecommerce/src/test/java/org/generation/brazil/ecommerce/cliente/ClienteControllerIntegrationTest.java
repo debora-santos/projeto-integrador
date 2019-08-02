@@ -11,9 +11,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
-
 import java.util.Collections;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -123,5 +121,4 @@ public class ClienteControllerIntegrationTest {
             assertEquals(HttpStatus.NOT_FOUND, e.getStatusCode());
         }
     }
-
 }
