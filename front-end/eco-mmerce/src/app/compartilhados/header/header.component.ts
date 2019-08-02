@@ -25,14 +25,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  goToCadastro() {
-    this.router.navigate(['/cadastro']);
-  }
-
   logout() {
     this.tokenStorage.signOut();
-    this.router.navigate([('login')]);
   }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
   onSubmit() {
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
@@ -44,10 +44,9 @@ export class HeaderComponent implements OnInit {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveTokenType(data.tokenType);
         this.tokenStorage.saveRoleType('user');
-
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.router.navigate(['home']);
+        this.refresh();
       },
       error => {
         console.log(error);
