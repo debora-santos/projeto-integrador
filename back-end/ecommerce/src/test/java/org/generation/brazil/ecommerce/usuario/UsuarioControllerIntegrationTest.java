@@ -1,6 +1,7 @@
 package org.generation.brazil.ecommerce.usuario;
 
 import org.generation.brazil.ecommerce.EcommerceApplication;
+import org.generation.brazil.ecommerce.cliente.Cliente;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -109,6 +110,19 @@ public class UsuarioControllerIntegrationTest {
 
         assertNotNull(responseEntity);
         assertEquals(200, responseEntity.getStatusCodeValue());
+    }
+
+    @Test
+    public void delete() {
+        int id = 1;
+        Usuario usuario = testRestTemplate.getForObject(getRootUrl("/usuarios/delete/" + id), Usuario.class);
+        assertNotNull(usuario);
+        testRestTemplate.delete(getRootUrl("/usuarios/delete/" + id));
+        try {
+            usuario = testRestTemplate.getForObject(getRootUrl("/usuarios/delete/" + id), Usuario.class);
+        } catch (final HttpClientErrorException e) {
+            assertEquals(HttpStatus.NOT_FOUND, e.getStatusCode());
+        }
     }
 
 }
