@@ -1,6 +1,5 @@
 package org.generation.brazil.ecommerce.produto;
 
-
 import org.generation.brazil.ecommerce.EcommerceApplication;
 import org.junit.Before;
 import org.junit.Test;
