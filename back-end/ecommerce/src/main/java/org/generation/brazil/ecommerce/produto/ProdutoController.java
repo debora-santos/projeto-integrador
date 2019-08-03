@@ -78,6 +78,7 @@ public class ProdutoController {
             produtoAtualizado.setNome(produto.getNome());
             produtoAtualizado.setDescricao(produto.getDescricao());
             produtoAtualizado.setPreco((produto.getPreco()));
+            produtoAtualizado.setPedido(produto.getPedido());
             return produtoRepository.save(produtoAtualizado);
         }).orElseThrow(() ->
                 new ResourceNotFoundException("Não há produto com o id " + id));

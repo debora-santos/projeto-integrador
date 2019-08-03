@@ -82,6 +82,7 @@ public class EnderecoController {
             enderecoAtualizado.setCidade(endereco.getCidade());
             enderecoAtualizado.setEstado(endereco.getEstado());
             enderecoAtualizado.setComplemento(endereco.getComplemento());
+            enderecoAtualizado.setCliente(endereco.getCliente());
             return enderecoRepository.save(enderecoAtualizado);
         }).orElseThrow(() ->
                 new ResourceNotFoundException("Não há endereço com o id " +id));

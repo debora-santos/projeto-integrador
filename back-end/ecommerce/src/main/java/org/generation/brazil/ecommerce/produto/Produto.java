@@ -1,11 +1,9 @@
 package org.generation.brazil.ecommerce.produto;
 
 import lombok.Data;
+import org.generation.brazil.ecommerce.pedido.Pedido;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
@@ -26,4 +24,6 @@ public class Produto {
     @NotNull
     private BigDecimal preco;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Pedido pedido;
 }

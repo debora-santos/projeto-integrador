@@ -33,7 +33,7 @@ public class ClienteControllerIntegrationTest {
 
     @Before
     public void init() {
-        this.token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTY0NjkwODA0LCJleHAiOjE1NjU1NTQ4MDR9.WBuk585l04GxkjYmsiqG0aw2DNT6D3-qAOKgjt2xp7QGEVBVEIVaePs--OLky4fMaIrWEAD0GnqThHW6F9VEEQ";
+        this.token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTY0ODYzMjY4LCJleHAiOjE1NjU3MjcyNjh9.Ux6R6_WJhbMqB8dF8VP13ZlYAzK9FjpuQShGl8gOGTFNLsWuVS6nZzhQNTm7LkzZ5fQhlTi2B4_O1gHjYde3vw";
     }
 
     @Test

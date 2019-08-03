@@ -1,4 +1,3 @@
-import { UsuarioService } from '../usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {SignUpInfo} from '../auth/signup-info';
@@ -17,7 +16,7 @@ export class CadastroComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() { }
 

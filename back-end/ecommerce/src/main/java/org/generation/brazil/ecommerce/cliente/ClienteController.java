@@ -77,9 +77,9 @@ public class ClienteController {
     @PutMapping("/clientes/{id}")
     public Cliente update(@PathVariable Long id, @RequestBody Cliente cliente) throws ResourceNotFoundException{
         return  clienteRepository.findById(id).map(clienteAtualizado -> {
-            clienteAtualizado.setIdDadosPessoais(cliente.getIdDadosPessoais());
-            clienteAtualizado.setIdEndereco(cliente.getIdEndereco());
-            clienteAtualizado.setIdPedido(cliente.getIdPedido());
+            clienteAtualizado.setDadosPessoais(cliente.getDadosPessoais());
+            clienteAtualizado.setEnderecos(cliente.getEnderecos());
+            clienteAtualizado.setPedidos(cliente.getPedidos());
             return clienteRepository.save(clienteAtualizado);
         }).orElseThrow(() ->
                 new ResourceNotFoundException("Não há cliente com o id " +id));

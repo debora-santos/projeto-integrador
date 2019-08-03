@@ -1,34 +1,33 @@
 package org.generation.brazil.ecommerce.cliente;
 
 import lombok.Data;
+import org.generation.brazil.ecommerce.dadospessoais.DadosPessoais;
+import org.generation.brazil.ecommerce.endereco.Endereco;
+import org.generation.brazil.ecommerce.pedido.Pedido;
+import org.generation.brazil.ecommerce.user.User;
+
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Data
 @Entity
+@Table(name = "cliente")
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //@OneToOne
-    //@JoinColumn(name = "id_dados_pessoais", referencedColumnName = "id")
-    @NotNull
-    @Column(name = "id_dados_pessoais")
-    private Long idDadosPessoais;
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "cliente", cascade = CascadeType.ALL)
+    private DadosPessoais dadosPessoais;
 
-    //@OneToOne
-    //@JoinColumn(name = "id_endereco", referencedColumnName = "id")
-    @NotNull
-    @Column(name = "id_endereco")
-    private Long idEndereco;
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Endereco> enderecos;
 
-    //@OneToOne
-    //@JoinColumn(name = "id_pedido", referencedColumnName = "id")
-    @NotNull
-    @Column(name = "id_pedido")
-    private Long idPedido;
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Pedido> pedidos;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 }

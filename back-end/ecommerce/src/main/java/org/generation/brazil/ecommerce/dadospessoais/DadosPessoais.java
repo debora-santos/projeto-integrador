@@ -2,6 +2,8 @@ package org.generation.brazil.ecommerce.dadospessoais;
 
 import lombok.Data;
 import lombok.Singular;
+import org.generation.brazil.ecommerce.cliente.Cliente;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -18,12 +20,6 @@ public class DadosPessoais {
     private Long id;
 
     @NotBlank
-    private String nome;
-
-    @NotBlank
-    private String sobrenome;
-
-    @NotBlank
     @Column(unique = true)
     @Size(min = 14, max = 14)
     private String cpf;
@@ -31,7 +27,8 @@ public class DadosPessoais {
     @NotBlank
     private String telefone;
 
-    @Email
-    @NotBlank
-    private String email;
+    @NotNull
+    @Size(max = 1)
+    @OneToOne(fetch = FetchType.LAZY)
+    private Cliente cliente;
 }

@@ -2,12 +2,11 @@ package org.generation.brazil.ecommerce.endereco;
 
 
 import lombok.Data;
+import org.generation.brazil.ecommerce.cliente.Cliente;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -16,6 +15,10 @@ public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
     @NotBlank
     private String logradouro;

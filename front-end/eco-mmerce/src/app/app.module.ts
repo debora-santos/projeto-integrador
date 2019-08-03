@@ -16,7 +16,8 @@ import { SobreComponent } from './sobre/sobre.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import { HeaderComponent } from './compartilhados/header/header.component';
 import { FooterComponent } from './compartilhados/footer/footer.component';
-import { ClienteComponent } from './cliente/cliente.component';
+import { ClienteComponent } from './interface-cliente/cliente.component';
+import {InterfaceProdutosComponent} from './interface-produtos/interface-produtos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { ClienteComponent } from './cliente/cliente.component';
     SobreComponent,
     HeaderComponent,
     FooterComponent,
-    ClienteComponent
+    ClienteComponent,
+    InterfaceProdutosComponent,
   ],
   imports: [
     BrowserModule,

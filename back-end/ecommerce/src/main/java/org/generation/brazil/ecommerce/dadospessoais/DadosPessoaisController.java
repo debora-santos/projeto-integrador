@@ -18,7 +18,6 @@ public class DadosPessoaisController {
     @Autowired
     DadosPessoaisRepository dadosPessoaisRepository;
 
-
     @ApiOperation(value = "Cadastra novos dados pessoais",
             notes = "Cadastra novos dados pessoais",
             response = DadosPessoais.class)
@@ -77,11 +76,9 @@ public class DadosPessoaisController {
     @PutMapping("/dados-pessoais/{id}")
     public DadosPessoais update(@PathVariable Long id, @RequestBody DadosPessoais dadosPessoais) throws ResourceNotFoundException{
         return  dadosPessoaisRepository.findById(id).map(dadosPessoaisAtualizados -> {
-            dadosPessoaisAtualizados.setNome(dadosPessoais.getNome());
-            dadosPessoaisAtualizados.setSobrenome(dadosPessoais.getSobrenome());
             dadosPessoaisAtualizados.setCpf(dadosPessoais.getCpf());
             dadosPessoaisAtualizados.setTelefone(dadosPessoais.getTelefone());
-            dadosPessoaisAtualizados.setEmail(dadosPessoais.getEmail());
+            dadosPessoaisAtualizados.setCliente(dadosPessoais.getCliente());
             return dadosPessoaisRepository.save(dadosPessoaisAtualizados);
         }).orElseThrow(() ->
                 new ResourceNotFoundException("Não há dados pessoais com o id " +id));
