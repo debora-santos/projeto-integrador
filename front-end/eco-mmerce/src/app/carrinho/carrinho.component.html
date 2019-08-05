@@ -1,5 +1,5 @@
-<div class="container" *ngIf="tokenStorage.getRoleType()">
-  <div class="card">
+<div class="container" *ngIf="token.getRoleType()">
+  <div class="card" *ngIf="produto">
     <table class="table table-hover shopping-cart-wrap">
       <thead class="text-muted">
       <tr>
@@ -14,15 +14,14 @@
       <tr>
         <td>
           <figure class="media">
-            <div class="img-wrap"><img src="http://bootstrap-ecommerce.com/main/images/items/2.jpg"
+            <div class="img-wrap"><img src="{{produto.imagem}}"
                                        class="img-thumbnail img-sm" alt="produto"></div>
             <figcaption class="media-body">
-              <h6 class="title text-truncate">Produto </h6>
+              <h6 class="title text-truncate">{{produto.nome}} </h6>
               <dl class="param param-inline small">
                 <dt>Descrição</dt>
-                <dd>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam quos vel
-                  voluptatibus sequi nihil? Impedit quae saepe odio labore aliquam reiciendis
-                  modi quia. Possimus, nesciunt reiciendis autem quisquam laborum quas!
+                <dd>
+                  {{produto.descricao}}
                 </dd>
               </dl>
             </figcaption>
@@ -69,6 +68,9 @@
     </table>
   </div>
 </div>
-<div *ngIf="tokenStorage.getRoleType()">
-
+<div *ngIf="!token.getRoleType()">
+  <p style="font-size: 3em;">Você precisa estar logado para acessar o carrinho!</p>
+  <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login-modal">
+    Login
+  </button>
 </div>
