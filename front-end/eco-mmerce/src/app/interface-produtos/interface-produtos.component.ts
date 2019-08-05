@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
 import {Produto} from '../produto';
+import {Observable} from 'rxjs';
 import {TokenStorageService} from '../auth/token-storage.service';
 import {ProdutoService} from '../produto.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-produtos',
-  templateUrl: './produtos.component.html',
-  styleUrls: ['./produtos.component.css']
+  selector: 'app-interface-produtos',
+  templateUrl: './interface-produtos.component.html',
+  styleUrls: ['./interface-produtos.component.css']
 })
-export class ProdutosComponent implements OnInit {
+export class InterfaceProdutosComponent implements OnInit {
 
   produtos: Observable<Produto[]>;
   produto: Produto = new Produto();

@@ -30,12 +30,15 @@
         <li class="nav-item" style="margin-top: 10px;">
           <a class="nav-link" routerLink="contato" routerLinkActive="active"> Contato </a>
         </li>
-        <li class="nav-item" style="margin-top: 10px;">
+        <li class="nav-item" style="margin-top: 10px;" *ngIf="!tokenStorage.getRoleType()">
           <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login-modal">
             Login
           </button>
         </li>
-        <li class="nav-item" style="margin-top: 10px;">
+        <li class="nav-item" *ngIf="tokenStorage.getRoleType()">
+          <a class="nav-link" routerLink="interface-produtos" routerLinkActive="active">Administrar</a>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;" *ngIf="!tokenStorage.getRoleType()">
           <a class="nav-link" routerLink="cadastro" routerLinkActive="active"> Cadastre-se </a>
         </li>
         <li>
@@ -48,6 +51,9 @@
           <img style="margin-top: 10px; width: 30px; margin-left: 30px;" src="https://i.imgur.com/rnzKJ4N.png"
                alt="carrinho">
         </a>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;" *ngIf="tokenStorage.getRoleType()">
+          <a class="nav-link" routerLink="cliente" routerLinkActive="active">Minha conta</a>
         </li>
       </ul>
     </div>

@@ -31,7 +31,6 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.tokenStorage.signOut();
-    this.router.navigate([('login')]);
   }
   onSubmit() {
     this.loginInfo = new AuthLoginInfo(
