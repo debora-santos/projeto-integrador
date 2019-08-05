@@ -1,19 +1,21 @@
 <header>
-  <nav class="navbar navbar-expand-xl navbar-light" style="padding:0px;">
+  <nav class="navbar navbar-expand-xl navbar-light" style="padding:0;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav"
-         style=" opacity: 0.9; box-shadow: black 0 0 5px; padding: 0px; background-color: #5ba9e4">
+         style=" opacity: 0.9; box-shadow: black 0 0 5px; padding: 0; background-color: #5ba9e4">
       <ul class=" navbar-nav nav-fill">
+        <li>
         <a class="navbar-brand nav-link" href="#">
           <img src="https://i.imgur.com/15cX1as.png" width="50px" height="50px" alt="tartaruga">
         </a>
+        </li>
         <li>
           <a style="margin-left: -20px;" class="navbar-brand nav-link" href="#">
-            <img src="https://i.imgur.com/5w8cHnw.png" alt="eco-mmerce">
+            <img style=" margin-top: 10px; width: 150px;" src="https://i.imgur.com/TKrDR0L.png" alt="eco-mmerce">
           </a>
         </li>
         <li class="nav-item" style="margin-top: 10px;">
@@ -34,17 +36,19 @@
           </button>
         </li>
         <li class="nav-item" style="margin-top: 10px;">
-          <a class="nav-link" routerLink="cadastrp" routerLinkActive="active"> Cadastre-se </a>
+          <a class="nav-link" routerLink="cadastro" routerLinkActive="active"> Cadastre-se </a>
         </li>
         <li>
           <form style="margin-top: 10px; margin-left: 20px;" class="navbar-form navbar-right search-form" role="search">
             <input type="text" class="form-control" placeholder="Pesquisa..." aria-label="pesquisa"/>
           </form>
         </li>
-        <a class="navbar-brand nav-link" href="#">
+        <li>
+        <a class="navbar-brand nav-link" routerLink="carrinho" routerLinkActive="active">
           <img style="margin-top: 10px; width: 30px; margin-left: 30px;" src="https://i.imgur.com/rnzKJ4N.png"
                alt="carrinho">
         </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -54,7 +58,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="nav-link" href="">Login</h3>
+        <h3 class="nav-link">Login</h3>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
