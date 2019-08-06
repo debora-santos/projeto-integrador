@@ -6,6 +6,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav"
+<<<<<<< HEAD
          style="box-shadow: black 0 0 5px; padding: 0;">
       <ul class=" navbar-nav nav-fill justify-content-around" style="margin-top: 10px;">
         <li class="nav-item">
@@ -39,6 +40,51 @@
         <li class="nav-item" *ngIf="tokenStorage.getRoleType()">
           <a class="nav-link" href="#" (click)="logout()">Sair</a>
         </li>
+=======
+         style=" opacity: 0.9; box-shadow: black 0 0 5px; padding: 0; background-color: #5ba9e4">
+      <ul class=" navbar-nav nav-fill">
+        <li>
+        <a class="navbar-brand nav-link" href="#">
+          <img src="https://i.imgur.com/15cX1as.png" width="50px" height="50px" alt="tartaruga">
+        </a>
+        </li>
+        <li>
+          <a style="margin-left: -20px;" class="navbar-brand nav-link" href="#">
+            <img style=" margin-top: 10px; width: 150px;" src="https://i.imgur.com/TKrDR0L.png" alt="eco-mmerce">
+          </a>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" routerLink="home" routerLinkActive="active"> Home</a>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" routerLink="sobre" routerLinkActive="active"> Sobre nós</a>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" routerLink="produtos" routerLinkActive="active"> Produtos </a>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" routerLink="contato" routerLinkActive="active"> Contato </a>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login-modal">
+            Login
+          </button>
+        </li>
+        <li class="nav-item" style="margin-top: 10px;">
+          <a class="nav-link" routerLink="cadastro" routerLinkActive="active"> Cadastre-se </a>
+        </li>
+        <li>
+          <form style="margin-top: 10px; margin-left: 20px;" class="navbar-form navbar-right search-form" role="search">
+            <input type="text" class="form-control" placeholder="Pesquisa..." aria-label="pesquisa"/>
+          </form>
+        </li>
+        <li>
+        <a class="navbar-brand nav-link" routerLink="carrinho" routerLinkActive="active">
+          <img style="margin-top: 10px; width: 30px; margin-left: 30px;" src="https://i.imgur.com/rnzKJ4N.png"
+               alt="carrinho">
+        </a>
+        </li>
+>>>>>>> master
       </ul>
     </div>
   </nav>
@@ -48,7 +94,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+<<<<<<< HEAD
         <h3 class="modal-title">Login</h3>
+=======
+        <h3 class="nav-link">Login</h3>
+>>>>>>> master
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
