@@ -31,4 +31,35 @@ public class Cliente {
     @Column(name = "id_pedido")
     private Long idPedido;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdDadosPessoais() {
+        return idDadosPessoais;
+    }
+
+    public void setIdDadosPessoais(Long idDadosPessoais) {
+        this.idDadosPessoais = idDadosPessoais;
+    }
+
+    public Long getIdEndereco() {
+        return idEndereco;
+    }
+
+    public void setIdEndereco(Long idEndereco) {
+        this.idEndereco = idEndereco;
+    }
+
+    public Long getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(Long idPedido) {
+        this.idPedido = idPedido;
+    }
 }
